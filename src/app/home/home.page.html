@@ -1,14 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Introdução
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <p>Bem vindo, {{ nome }}</p>
+  <ion-button [color]="cor" shape="round" expand="full">
+    Cor
+  </ion-button>
+  <ion-button (click)="trocarCor()" color="primary" shape="round" expand="full">
+    Troca cor
+  </ion-button>
+  <ion-icon class="icon" color="primary" [name]="humor"></ion-icon>
+  <ion-item>
+    <label>Humor</label>
+    <ion-toggle [checked]="checked_humor" color="primary" (ionChange)="mudaHumor()" slot="end"></ion-toggle>
+  </ion-item>
 </ion-content>
