@@ -11,21 +11,26 @@ export class HomePage {
   nome: string = "Fábio";
   humor = "sad";
   checked_humor = false;
-  cores = ["danger", "success", "warning"];
+  cores = ["primary", "danger", "success", "warning"];
   idx = 0;
-  cor = "primary";
+  // cor = "primary";
 
   constructor() { }
 
+  // trocarCor(): void {
+  //   if (this.idx >= this.cores.length) {
+  //     this.idx = 0;
+  //   }
+  //   this.cor = this.cores[this.idx];
+  //   this.idx += 1;
+  // }
+
   trocarCor(): void {
-    console.log('Chamou trocarCor!');
-    console.log(this.idx);
-    console.log(this.cores.length);
-    if (this.idx > this.cores.length) {
+    if (this.idx < this.cores.length - 1) {
+      this.idx += 1;
+    } else {
       this.idx = 0;
     }
-    this.cor = this.cores[this.idx];
-    this.idx++;
   }
 
   mudaHumor(): void {

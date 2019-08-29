@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <p>Bem vindo, {{ nome }}</p>
-  <ion-button [color]="cor" shape="round" expand="full">
+  <ion-button [color]="cores[idx]" shape="round" expand="full">
     Cor
   </ion-button>
   <ion-button (click)="trocarCor()" color="primary" shape="round" expand="full">
