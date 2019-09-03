@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { core } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,22 +8,14 @@ import { core } from '@angular/compiler';
 })
 export class HomePage {
 
-  nome: string = "Fábio";
+  nome = "";
   humor = "sad";
   checked_humor = false;
   cores = ["primary", "danger", "success", "warning"];
   idx = 0;
-  // cor = "primary";
+  sexo = "";
 
-  constructor() { }
-
-  // trocarCor(): void {
-  //   if (this.idx >= this.cores.length) {
-  //     this.idx = 0;
-  //   }
-  //   this.cor = this.cores[this.idx];
-  //   this.idx += 1;
-  // }
+  constructor(private router: Router) { }
 
   trocarCor(): void {
     if (this.idx < this.cores.length - 1) {
@@ -41,5 +33,19 @@ export class HomePage {
     } else {
       this.humor = "sad";
     }
+  }
+
+  selecionaSexo(event): void {
+    console.log(event.detail.value);
+    this.sexo = event.detail.value;
+  }
+
+  defineNome(event) {
+    console.log(event.detail.value);
+    this.nome = event.detail.value;
+  }
+
+  irParaDetalhes(){
+    this.router.navigate(['/detalhes']);
   }
 }
