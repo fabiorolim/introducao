@@ -46,6 +46,6 @@ export class HomePage {
   }
 
   irParaDetalhes(){
-    this.router.navigate(['/detalhes']);
+    this.router.navigate(['detalhes']);
   }
 }
