@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationError, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -45,7 +45,15 @@ export class HomePage {
     this.nome = event.detail.value;
   }
 
-  irParaDetalhes(){
-    this.router.navigate(['detalhes']);
+  irParaDetalhes() {
+    let extras: NavigationExtras = {
+      queryParams: {
+        'nome': this.nome,
+        'humor': this.humor,
+        'sexo': this.sexo,
+        'cor': this.cores[this.idx]
+      }
+    };
+    this.router.navigate(['/detalhes'], extras);
   }
 }
