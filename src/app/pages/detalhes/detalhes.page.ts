@@ -15,14 +15,34 @@ export class DetalhesPage implements OnInit {
 
 
   constructor(private route: ActivatedRoute) {
+  }
+
+  ionViewDidLoad() {
+    console.log('Detalhes: ionViewDidLoad');
+  }
+
+  ionViewWillEnter() {
     this.route.queryParams.subscribe(params => {
       if (params) {
         this.nome = params.nome;
         this.sexo = params.sexo;
-        this.cor = params.cores;
+        this.cor = params.cor;
         this.humor = params.humor;
       }
     });
+    console.log('Detalhes: ionViewWillEnter');
+  }
+
+  ionViewWillLeave() {
+    console.log('Detalhes: ionViewWillLeave');
+  }
+
+  ionViewDidEnter() {
+    console.log('Detalhes: ionViewDidEnter');
+  }
+
+  ionViewDidLeave() {
+    console.log('Detalhes: ionViewDidLeave');
   }
 
   ngOnInit() {

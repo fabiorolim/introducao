@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, NavigationError, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,26 @@ export class HomePage {
   sexo = "";
 
   constructor(private router: Router) { }
+
+  ionViewDidLoad(){
+    console.log('Home: ionViewDidLoad');
+  }
+
+  ionViewWillEnter(){
+    console.log('Home: ionViewWillEnter');
+  }
+
+  ionViewWillLeave(){
+    console.log('Home: ionViewWillLeave');
+  }
+
+  ionViewDidEnter(){
+    console.log('Home: ionViewDidEnter');
+  }
+
+  ionViewDidLeave(){
+    console.log('Home: ionViewDidLeave');
+  }
 
   trocarCor(): void {
     if (this.idx < this.cores.length - 1) {
